@@ -1,18 +1,46 @@
-tam_atual = 0
-tam_max = 100
-lista = []*tam_max
+class List:
+    def __init__(lista):
+        lista.items = []
 
-class vazia():
-  if len(lista) == tam_atual:
-    print('Lista vazia')
-  else:
-    print('Lista não vazia')
+    def vazia(lista):
+        if len(lista.items) == 0:
+           print("Lista vazia")
 
-class cheia():
-  if tam_atual == tam_max:
-    print("lista cheia")
-  else:
-    print("lista não cheia")
+    def cheia(lista):
+        # Como a lista em Python é dinâmica, ela não pode estar cheia
+        # por definição. Então, vamos sempre retornar False.
+        return False
 
-class tam_lista():
-  print(len(lista))
+    def tamanho(lista):
+        return len(lista.items)
+
+    def mostre(lista, index):
+        return lista.items[index]
+
+    def mude(lista, index, value):
+        lista.items[index] = value
+
+    def insira(lista, index, value):
+        lista.items.insert(index, value)
+
+    def remova(lista, index):
+        return lista.items.pop(index)
+
+
+def main():
+    lst = List()
+
+    print("Lista vazia:", lst.vazia())
+    print("Tamanho da lista:", lst.tamanho())
+
+    lst.insert(0, 11)
+    lst.insert(1, 83)
+    print("Elementos da lista:", [lst.mostre(i) for i in range(lst.size())])
+
+    lst.set(1, 21)
+    print("Elementos da lista:", [lst.mostre(i) for i in range(lst.size())])
+
+    lst.remove(2)
+    print("Elementos da lista:", [lst.mostre(i) for i in range(lst.size())])
+    
+main()
