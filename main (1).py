@@ -35,12 +35,12 @@ def main():
 
     lst.insert(0, 11)
     lst.insert(1, 83)
-    print("Elementos da lista:", [lst.mostre(i) for i in range(lst.size())])
+    print("Elementos da lista:", [lst.mostre(i) for i in range(lst.tamanho())])
 
     lst.set(1, 21)
-    print("Elementos da lista:", [lst.mostre(i) for i in range(lst.size())])
+    print("Elementos da lista:", [lst.mostre(i) for i in range(lst.tamanho())])
 
     lst.remove(2)
-    print("Elementos da lista:", [lst.mostre(i) for i in range(lst.size())])
+    print("Elementos da lista:", [lst.mostre(i) for i in range(lst.tamanho())])
     
 main()
